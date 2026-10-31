@@ -1,0 +1,116 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="Main.uss" />
+    <ui:VisualElement name="root" class="root" picking-mode="Ignore">
+
+        <!-- World-anchored speech bubbles (positioned from code). -->
+        <ui:VisualElement name="bubbles" class="layer" picking-mode="Ignore" />
+
+        <!-- In-game HUD -->
+        <ui:VisualElement name="hud" class="layer hud" picking-mode="Ignore">
+            <ui:VisualElement class="hud-left" picking-mode="Ignore">
+                <ui:Label name="stage-title" class="pill stage-pill" picking-mode="Ignore" />
+                <ui:VisualElement name="order-pill" class="pill order-pill" picking-mode="Ignore">
+                    <ui:VisualElement name="order-icon" class="order-icon" picking-mode="Ignore" />
+                    <ui:Label name="order-label" class="order-label" picking-mode="Ignore" />
+                    <ui:Label name="loss-label" class="loss-label" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement class="power-row" picking-mode="Ignore">
+                    <ui:VisualElement name="power-strawberry" class="pill power-pill" picking-mode="Ignore">
+                        <ui:Label name="power-strawberry-label" class="power-label" picking-mode="Ignore" />
+                        <ui:VisualElement class="power-track" picking-mode="Ignore">
+                            <ui:VisualElement name="power-strawberry-fill" class="power-fill strawberry" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="power-chocolate" class="pill power-pill" picking-mode="Ignore">
+                        <ui:Label name="power-chocolate-label" class="power-label" picking-mode="Ignore" />
+                        <ui:VisualElement class="power-track" picking-mode="Ignore">
+                            <ui:VisualElement name="power-chocolate-fill" class="power-fill chocolate" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="hud-right">
+                <ui:Button name="retry-button" class="small-button" />
+                <ui:Button name="menu-button" class="small-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="banner" class="banner" picking-mode="Ignore">
+                <ui:Label name="banner-stage" class="banner-stage" picking-mode="Ignore" />
+                <ui:Label name="banner-name" class="banner-name" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:Label name="toast" class="toast" picking-mode="Ignore" />
+        </ui:VisualElement>
+
+        <!-- On-screen controls for touch devices -->
+        <ui:VisualElement name="touch" class="layer touch" picking-mode="Ignore">
+            <ui:VisualElement class="pad">
+                <ui:VisualElement name="touch-left" class="pad-button"><ui:Label text="◀" class="pad-glyph" picking-mode="Ignore" /></ui:VisualElement>
+                <ui:VisualElement name="touch-right" class="pad-button"><ui:Label text="▶" class="pad-glyph" picking-mode="Ignore" /></ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="action-buttons">
+                <ui:VisualElement class="action-column">
+                    <ui:VisualElement name="touch-eat" class="action-button eat"><ui:Label name="touch-eat-label" class="action-glyph" picking-mode="Ignore" /></ui:VisualElement>
+                    <ui:VisualElement name="touch-cut" class="action-button cut"><ui:Label name="touch-cut-label" class="action-glyph" picking-mode="Ignore" /></ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="touch-jump" class="action-button jump"><ui:Label name="touch-jump-label" class="action-glyph" picking-mode="Ignore" /></ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Title -->
+        <ui:VisualElement name="title-screen" class="overlay">
+            <ui:VisualElement class="card">
+                <ui:Label name="title-small" class="logo-small" />
+                <ui:Label name="title-big" class="logo" />
+                <ui:Label name="tagline" class="tagline" />
+                <ui:VisualElement name="how-to" class="how-to" />
+                <ui:Label name="rotate-hint" class="rotate-hint" />
+                <ui:Label name="key-hint" class="key-hint" />
+                <ui:Button name="play-button" class="button primary" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Stage select -->
+        <ui:VisualElement name="select-screen" class="overlay">
+            <ui:VisualElement class="card wide">
+                <ui:Label name="select-title" class="heading" />
+                <ui:VisualElement name="stage-list" class="stage-list" />
+                <ui:Button name="select-back-button" class="button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Pause -->
+        <ui:VisualElement name="pause-screen" class="overlay">
+            <ui:VisualElement class="card">
+                <ui:Label name="pause-title" class="heading" />
+                <ui:Button name="resume-button" class="button primary" />
+                <ui:Button name="checkpoint-button" class="button" />
+                <ui:Button name="restart-button" class="button" />
+                <ui:Button name="pause-select-button" class="button" />
+                <ui:Button name="sound-button" class="button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Result -->
+        <ui:VisualElement name="result-screen" class="overlay">
+            <ui:VisualElement class="card">
+                <ui:Label name="result-title" class="heading" />
+                <ui:Label name="result-stars" class="stars" />
+                <ui:Label name="result-loss" class="stat" />
+                <ui:Label name="result-time" class="stat" />
+                <ui:Label name="result-note" class="note" />
+                <ui:Button name="next-button" class="button primary" />
+                <ui:VisualElement class="button-row">
+                    <ui:Button name="again-button" class="button" />
+                    <ui:Button name="result-select-button" class="button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Fatal data error -->
+        <ui:VisualElement name="error-screen" class="overlay">
+            <ui:VisualElement class="card">
+                <ui:Label name="error-title" class="heading" />
+                <ui:Label name="error-message" class="note error-message" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

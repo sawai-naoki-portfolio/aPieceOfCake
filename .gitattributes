@@ -1,0 +1,20 @@
+# Normalise line endings in the repository; check out with the platform default.
+* text=auto
+
+# Unity YAML assets: use Unity's merge tool when available (see Docs/07_Operations.md).
+*.unity    text merge=unityyamlmerge
+*.prefab   text merge=unityyamlmerge
+*.asset    text merge=unityyamlmerge
+*.mat      text merge=unityyamlmerge
+*.meta     text
+
+# Binary assets
+*.png  binary
+*.jpg  binary
+*.fbx  binary
+*.FBX  binary
+*.blend binary
+*.wav  binary
+*.ogg  binary
+*.ttf  binary
+*.otf  binary
